@@ -644,12 +644,11 @@ public class principal extends javax.swing.JFrame {
             u.setNombre(nombre_mod.getText());
             u.setApellido(apellido_mod.getText());
             u.setContra(contra_mod.getText());
-            u.setFecha_nacimiento(fecha_mod.getDate());          
+            u.setFecha_nacimiento(fecha_mod.getDate());
             u.setDepartamento(departamento_mod.getItemAt(0));
-            
+
             JOptionPane.showMessageDialog(this, "usuario modificado exitosamente...");
         }
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2MouseClicked
@@ -689,15 +688,54 @@ public class principal extends javax.swing.JFrame {
         });
     }
 
-    public void llenartabla() {
+    public void tablaEmpleado() {
+        DefaultTableModel modelCiviles = (DefaultTableModel) jTable3.getModel();
+        modelCiviles.setRowCount(0);
+        for (usuario u : lista) {
+            if (u instanceof civil civil) {
+                Object[] rowData = {
+                    civil.getNombre(),
+                    civil.getId(),
+                    civil.getFecha_nacimiento()
+                };
+                modelCiviles.addRow(rowData);
+            }
+        }
 
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-
-        for (int i = 0; i < lista.size(); i++) {
-            Object[] modelo2 = {lista.get(i).getNombre() + " " + lista.get(i).getId() + " " + lista.get(i).getFecha_nacimiento()};
-            modelo.addRow(modelo2);
+        DefaultTableModel modelTramites = (DefaultTableModel) jTable4.getModel();
+        modelTramites.setRowCount(0);
+        for (usuario u : lista) {
+            if (u instanceof civil civil) {
+                for (tramite temp : civil.getLista()) {
+                    Object[] rowData = {
+                        temp.getNombre(),
+                        temp.getDescripcion(),
+                        temp.getDate(),
+                        temp.getDescripcion()
+                    };
+                    modelTramites.addRow(rowData);
+                }
+            }
         }
     }
+    
+    public void llenarTablaCivil(String nombreCompleto) {
+        DefaultTableModel modelInfo = (DefaultTableModel) jTable1.getModel();
+        modelInfo.setRowCount(0);
+        for (usuario u : lista) {
+            String usuario = u.getNombre() + " " + u.getApellido();
+            if (usuario.equals(nombreCompleto)) {
+                Object[] rowData = {
+                    u.getNombre(),
+                    u.getId(),
+                    u.getFecha_nacimiento()
+                };
+                modelInfo.addRow(rowData);
+            }
+        }
+    }
+
+      
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

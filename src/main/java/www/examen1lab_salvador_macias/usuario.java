@@ -31,7 +31,7 @@ public class usuario {
         this.fecha_nacimiento = fecha_nacimiento;
         this.sexo = sexo;
         this.departamento = departamento;
-        this.id = id;
+        identidad(id);
     }
 
     public String getNombre() {
