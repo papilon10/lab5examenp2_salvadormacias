@@ -22,7 +22,7 @@ public class empleado extends usuario {
         this.tiempo = tiempo;
     }
 
-    public empleado(String carrera, String puesto, int tiempo, String nombre, String apellido, String contra, Date fecha_nacimiento, String sexo, String departamento, int id) {
+    public empleado(String carrera, String puesto, int tiempo, String nombre, String apellido, String contra, Date fecha_nacimiento, String sexo, String departamento, String id) {
         super(nombre, apellido, contra, fecha_nacimiento, sexo, departamento, id);
         this.carrera = carrera;
         this.puesto = puesto;
@@ -101,11 +101,11 @@ public class empleado extends usuario {
         this.departamento = departamento;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

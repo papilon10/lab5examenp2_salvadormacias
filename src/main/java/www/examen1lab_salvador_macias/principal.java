@@ -7,6 +7,7 @@ package www.examen1lab_salvador_macias;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,10 +21,11 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
-        lista.add(new empleado("sistemas", "jefe", 6, "juan", "perez", "juanchi1234", new Date(2000, 04, 11), "M", "francisco morazan", 5000000));
-        lista.add(new civil("tito", "estevez", "mollytrox10", new Date(2004, 10, 8), "M", "Comayagua", 500000000));
-        usuario empleado1 = new empleado("sistemas", "jefe", 6, "juan", "perez", "juanchi1234", new Date(2000, 04, 11), "M", "francisco morazan", 5000000);
-        usuario civil1 = new civil("tito", "estevez", "mollytrox10", new Date(2004, 10, 8), "M", "Comayagua", 500000000);
+        lista.add(new empleado("sistemas", "jefe", 6, "juan", "perez", "juanchi1234", new Date(2000, 04, 11), "M", "francisco morazan", "5000000"));
+        lista.add(new civil("tito", "estevez", "mollytrox10", new Date(2004, 10, 8), "M", "Comayagua", "500000"));
+        usuario empleado1 = new empleado("sistemas", "jefe", 6, "juan", "perez", "juanchi1234", new Date(2000, 04, 11), "M", "francisco morazan", "5000000");
+        usuario civil1 = new civil("tito", "estevez", "mollytrox10", new Date(2004, 10, 8), "M", "Comayagua", "500000000");
+
     }
 
     /**
@@ -390,7 +392,7 @@ public class principal extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -437,9 +439,9 @@ public class principal extends javax.swing.JFrame {
                             .addComponent(jTextField5)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
+                        .addGap(305, 305, 305)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -453,8 +455,8 @@ public class principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                .addGap(30, 30, 30))
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("gestion de tramites", jPanel5);
@@ -570,10 +572,34 @@ public class principal extends javax.swing.JFrame {
 
         } else {
 
-            JOptionPane.showMessageDialog(this, "usuario incorrecto...");
+            JOptionPane.showMessageDialog(this, "nombre o contrasena incorrecto...");
 
         }
 
+        /*for (usuario u : lista) {
+
+            if (jTextField1.equals(lista.get(0).getNombre() + " " + lista.get(0).getApellido()) && jPasswordField1.equals(lista.get(0).getContra())) {
+
+                jTextField1.setText("");
+                jPasswordField1.setText("");
+                this.setVisible(false);
+                frame_empleado.setVisible(true);
+                frame_empleado.pack();
+                frame_empleado.setLocationRelativeTo(null);
+            } else if (jTextField1.equals(lista.get(1).getNombre() + " " + lista.get(1).getApellido()) && jPasswordField1.equals(lista.get(1).getApellido())) {
+
+                jTextField1.setText("");
+                jPasswordField1.setText("");
+                this.setVisible(false);
+                frame_civil.setVisible(true);
+                frame_civil.pack();
+                frame_civil.setLocationRelativeTo(null);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "nombre o contrasena incorrecto...");
+
+            }
+        }*/
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -582,7 +608,6 @@ public class principal extends javax.swing.JFrame {
         this.setVisible(true);
         this.pack();
         this.setLocationRelativeTo(this);
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_cerrar_sesionMouseClicked
@@ -600,7 +625,6 @@ public class principal extends javax.swing.JFrame {
         this.setVisible(true);
         this.pack();
         this.setLocationRelativeTo(this);
-        
 
 // TODO add your handling code here:
     }//GEN-LAST:event_cerrar_sesion1MouseClicked
@@ -643,6 +667,17 @@ public class principal extends javax.swing.JFrame {
             }
         });
     }
+
+    public void llenartabla() {
+
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+
+        for (int i = 0; i < lista.size(); i++) {
+            Object[] modelo2 = {lista.get(i).getNombre() + " " + lista.get(i).getId() + " " + lista.get(i).getFecha_nacimiento()};
+            modelo.addRow(modelo2);
+        }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_id;

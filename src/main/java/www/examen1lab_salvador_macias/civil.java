@@ -18,7 +18,7 @@ public class civil extends usuario {
     public civil() {
     }
 
-    public civil(String nombre, String apellido, String contra, Date fecha_nacimiento, String sexo, String departamento, int id) {
+    public civil(String nombre, String apellido, String contra, Date fecha_nacimiento, String sexo, String departamento, String id) {
         super(nombre, apellido, contra, fecha_nacimiento, sexo, departamento, id);
     }
 
@@ -78,11 +78,11 @@ public class civil extends usuario {
         this.departamento = departamento;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

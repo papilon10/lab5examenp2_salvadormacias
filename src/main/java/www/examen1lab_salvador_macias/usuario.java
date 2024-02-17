@@ -5,6 +5,7 @@
 package www.examen1lab_salvador_macias;
 
 import java.util.Date;
+import java.util.Random;
 
 /**
  *
@@ -18,12 +19,12 @@ public class usuario {
     Date fecha_nacimiento;
     String sexo;
     String departamento;
-    int id;
+    String id;
 
     public usuario() {
     }
 
-    public usuario(String nombre, String apellido, String contra, Date fecha_nacimiento, String sexo, String departamento, int id) {
+    public usuario(String nombre, String apellido, String contra, Date fecha_nacimiento, String sexo, String departamento, String id) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.contra = contra;
@@ -81,17 +82,45 @@ public class usuario {
         this.departamento = departamento;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public String identidad(String id) {
+        Random r = new Random();
+        String identidad, municipio;
+        municipio = "";
+        identidad = "";
+        if (departamento.contentEquals("francisco morazan") || (departamento.contentEquals("Francisco Morazan"))) {
+
+            int numero = r.nextInt(3);
+            int n = r.nextInt(1, 28);
+            int n2 = r.nextInt(1, 28);
+            int n3 = r.nextInt(10000, 99999);
+            identidad = "01" + n + n2 + (fecha_nacimiento.getYear() + 1900) + n3;
+        } else if (departamento.contentEquals("Cortes") || (departamento.contentEquals("cortes"))) {
+            int n = r.nextInt(1, 12);
+            int n2 = r.nextInt(1, 12);
+            int n3 = r.nextInt(10000, 99999);
+            identidad = "02" + n + n2 + (fecha_nacimiento.getYear() + 1900) + n3;
+        } else if (departamento.contentEquals("comayagua") || (departamento.contentEquals("Conayagua"))) {
+            int n = r.nextInt(1, 21);
+            int n2 = r.nextInt(1, 21);
+            int n3 = r.nextInt(10000, 99999);
+            identidad = "03" + n + n2 + (fecha_nacimiento.getYear() + 1900) + n3;
+        }
+
+        return identidad;
+
     }
 
     @Override
     public String toString() {
-        return "usuario{" + "nombre=" + nombre + ", apellido=" + apellido + ", contra=" + contra + ", fecha_nacimiento=" + fecha_nacimiento + ", sexo=" + sexo + ", departamento=" + departamento + ", id=" + id + '}';
+        return "usuario{" + "nombre=" + nombre + ", apellido=" + apellido + ", contra=" + contra + ", fecha_nacimiento=" + fecha_nacimiento + ", sexo=" + sexo + ", departamento=" + departamento + ", id=" + identidad(id) + '}';
     }
 
 }
