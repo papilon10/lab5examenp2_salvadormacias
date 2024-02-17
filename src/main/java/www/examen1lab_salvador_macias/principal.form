@@ -228,14 +228,14 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel8" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                      <Component id="jTextField2" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="nombre_mod" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                                       <Component id="jLabel9" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
                                       <Component id="jLabel10" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                                      <Component id="jTextField3" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="contra_mod" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                                       <Component id="jLabel11" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jComboBox2" alignment="0" pref="193" max="32767" attributes="0"/>
-                                          <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="departamento_mod" alignment="0" pref="193" max="32767" attributes="0"/>
+                                          <Component id="sexo_mod" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
@@ -243,8 +243,8 @@
                                       <Component id="jButton2" min="-2" pref="134" max="-2" attributes="0"/>
                                       <Component id="jLabel13" min="-2" pref="138" max="-2" attributes="0"/>
                                       <Component id="jLabel12" min="-2" pref="89" max="-2" attributes="0"/>
-                                      <Component id="jTextField4" min="-2" pref="190" max="-2" attributes="0"/>
-                                      <Component id="jDateChooser1" min="-2" pref="162" max="-2" attributes="0"/>
+                                      <Component id="apellido_mod" min="-2" pref="190" max="-2" attributes="0"/>
+                                      <Component id="fecha_mod" min="-2" pref="162" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -264,8 +264,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="nombre_mod" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="apellido_mod" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -274,15 +274,15 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jDateChooser1" min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="contra_mod" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="fecha_mod" min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sexo_mod" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
@@ -292,7 +292,7 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox2" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="departamento_mod" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace pref="98" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -319,21 +319,21 @@
                     <Property name="text" type="java.lang.String" value="nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="nombre_mod">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="contra_mod">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="sexo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="sexo_mod">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -345,7 +345,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sexo_modActionPerformed"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -356,7 +356,7 @@
                     <Property name="text" type="java.lang.String" value="departamento"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="departamento_mod">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -376,14 +376,14 @@
                     <Property name="text" type="java.lang.String" value="apellido"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="apellido_mod">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="fecha de nacimiento"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+                <Component class="com.toedter.calendar.JDateChooser" name="fecha_mod">
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton2">
                   <Properties>
@@ -392,6 +392,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
